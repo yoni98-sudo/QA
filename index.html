@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="style" href="/bla.css">
+    <style>
+        body {
+            text-align: center;
+        }
+        *{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input id 'firstNumber' type ="number" placeholder="enter first number">
+   <div>
+    <select  name ="" id="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+   </div>
+
+
+    <input id "secondNumber" type ="number" placeholder="enter second number">
+
+   <div>
+    <button onclick ="getNumbers()">Calculate</button>
+   </div>
+   <h5>Result:</h5>
+   <div id="result"></div>
+
+   <script>
+    function getNumbers() {
+        let firstNumValue = document.getElementById('firstNumber').value
+        let secondNumValue = document.getElementById('secondNumber').value;
+        let operator = document.getElementById('operation').value
+        let resultPlace = document.getElementById('result').value
+        let result =0
+        if (operator === '+') {
+            result = +firstNumValue + +secondNumValue
+
+        } else if (operator === '-') {
+            result = +firstNumValue - +secondNumValue
+    
+        } else if (operator === '*') {
+            result = +firstNumValue * +secondNumValue
+        } else  {
+            result = +firstNumValue / +secondNumValue
+        }
+
+        resultPlace.textContent = result;
+        document.getElementById('firstNumber').value =" "
+        document.getElementById('secondtNumber').value= " "
+
+
+
+    }
+      
+
+
+    
+
+   </script>
+
+
+
+
+</body>
+</html>
